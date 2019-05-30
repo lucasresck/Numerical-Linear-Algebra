@@ -43,7 +43,11 @@ function [U, R] = householder(A)
     for i = 1:n
         v = R(i:$, i)
         //Here we choose the fasthest Hx from a_i depending on its signal
-        v(1) = v(1) - norm(v) * sign(v(1))
+        if v(1) >= 0
+            v(1) = v(1) - norm(v)
+        else
+            v(1) = v(1) + norm(v)
+        end
         //If v ~= 0
         if norm(v) ~= 0
         //Unit vector
