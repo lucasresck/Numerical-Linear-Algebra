@@ -31,7 +31,7 @@
     
         \item %1
         
-            A função Scilab \textbf{gram\_schmidt(A)} foi escrita no arquivo \textbf{Functions.sce}. Vejamos como ela se comporta para as seguintes matrizes:
+            A função Scilab \textbf{gram\_schmidt} foi escrita no arquivo \textbf{Functions.sce}. Vejamos como ela se comporta para as seguintes matrizes:
         
             \begin{figure}[H]
                 \centering
@@ -49,13 +49,13 @@
             
             Para essa matriz $6\times5$, obtemos uma $R$ triangular superior. Além disso, $Q^TQ \approx I$ indica uma boa precisão do método.
             
-            Concluímos que a função \textbf{gram\_schmidt(A)} cumpre o esperado.
+            Concluímos que a função \textbf{gram\_schmidt} cumpre o esperado.
         
         \bigbreak
         
         \item %2
         
-            A função Scilab \textbf{gram\_schmidt\_modificado(A)} foi escrita no arquivo \textbf{Functions.sce}. Vejamos como ela se comporta para as mesmas matrizes do item anterior.
+            A função Scilab \textbf{gram\_schmidt\_modificado} foi escrita no arquivo \textbf{Functions.sce}. Vejamos como ela se comporta para as mesmas matrizes do item anterior.
         
             \begin{figure}[H]
                 \centering
@@ -89,13 +89,13 @@
             
             O cálculo da precisão do método é análogo ao anterior. Observe que o método de Gram-Schmidt modificado obteve uma melhor precisão para essa matriz.
             
-            Concluímos que a função \textbf{gram\_schmidt\_modificado(A)} cumpre o esperado e tem melhor precisão do que a função \textbf{gram\_schmidt(A)}.
+            Concluímos que a função \textbf{gram\_schmidt\_modificado} cumpre o esperado e tem melhor precisão do que a função \textbf{gram\_schmidt}.
         
         \bigbreak
         
         \item %3
         
-            A função Scilab \textbf{householder(A)} foi escrita no arquivo \textbf{Functions.sce}. Vejamos como ela se comporta para as mesmas matrizes do item anterior.
+            A função Scilab \textbf{householder} foi escrita no arquivo \textbf{Functions.sce}. Vejamos como ela se comporta para as mesmas matrizes do item anterior.
         
             \begin{figure}[H]
                 \centering
@@ -129,7 +129,7 @@
             
             O cálculo da precisão do método é análogo ao anterior. Observe que o método de Householder teve melhor precisão para esta matriz.
             
-            Concluímos que a função \textbf{householder(A)} cumpre o esperado e tem melhor precisão do que as funções \textbf{gram\_schmidt(A)} e \textbf{gram\_schmidt\_modificado(A)}.
+            Concluímos que a função \textbf{householder} cumpre o esperado e tem melhor precisão do que as funções \textbf{gram\_schmidt} e \textbf{gram\_schmidt\_modificado}.
         
         \bigbreak
         
@@ -157,7 +157,7 @@
                     18
                     \end{bmatrix}$$
                     
-                    Precisamos encontrar $\mathbf{x}$ tal que $A^TA\mathbf{x}=A^Tb$. Porém, agora, podemos encontrá-lo fatorando $A$ em $Q$ e $R$ e resolvendo $R\mathbf{x} = Q^Tb$. Utilizando a função \textbf{gram\_schmidt\_modificado} ára a fatoração QR e a função \textbf{Gaussian\_Elimination\_4}, da aula prática 1, para a resolução do sistema:
+                    Precisamos encontrar $\mathbf{x}$ tal que $A^TA\mathbf{x}=A^Tb$. Porém, agora, podemos encontrá-lo fatorando $A$ em $Q$ e $R$ e resolvendo $R\mathbf{x} = Q^Tb$. Utilizando a função \textbf{gram\_schmidt\_modificado} para a fatoração QR e a função \textbf{Gaussian\_Elimination\_4}, da aula prática 1, para a resolução do sistema:
         
                     \begin{figure}[H]
                         \centering
@@ -183,7 +183,7 @@
                 \item
                 
                 \begin{enumerate}[label=\alph*)]
-                    \item Vamos aproximar $y = p(t) = ce^{kt}$. Podemos aproximar $\ln y = \ln c + kt$, um modelo linear. Então $\mathbf{x} = (\ln c, k)$. Calculamos $b$ aplicando $\ln$ nas populações. Realizamos a fatoração QR da matriz $A$ utilizando a função \textbf{householder}, encontramos a matriz $Q$ a partir da matriz $U$ e, com a função \textbf{Gaussian\_Elimination\_4}, da aula prática 1, resolvemos $R^TR\mathbf{x} = R^TQ^Tb$. Considerando $t=0$ para $1950$, temos:
+                    \item Vamos aproximar $y = p(t) = ce^{kt}$. Podemos aproximar $\ln y = \ln c + kt$, um modelo linear, então $\mathbf{x} = (\ln c, k)$. Calculamos $b$ aplicando $\ln$ nas populações. Realizamos a fatoração QR da matriz $A$ utilizando a função \textbf{householder}, encontramos a matriz $Q$ a partir da matriz $U$ e, com a função \textbf{Gaussian\_Elimination\_4}, da aula prática 1, resolvemos $R^TR\mathbf{x} = R^TQ^Tb$. Considerando $t=0$ para $1950$, temos:
                 
                     \begin{figure}[H]
                         \centering
@@ -195,7 +195,7 @@
                     
                     Novamente, os resultados foram muito próximos daqueles obtidos na aula prática 4. Sendo assim, a fatoração QR pelo método de Householder não é muito necessária neste caso.
                     
-                    Concluímos que $c \approx e^{5,04} \approx 155,33$ e $k \approx 0,01$. Portanto, $p(t)\approx155,33e^{0,01t}$. Sendo assim, a taxa de crescimento é $p'(t) \approx 1,89e^{0,01t}$.
+                    Concluímos que $c \approx e^{5,04} \approx 155,33$ e $k \approx 0,01$. Logo, $p(t)\approx155,33e^{0,01t}$. Portanto, a taxa de crescimento é $p'(t) \approx 1,89e^{0,01t}$.
                     \bigbreak
                     \item A população estimada dos EUA em 2010 é $p(60) = ce^{k60} \approx 322,01$ milhões de pessoas. Em 2010, a população dos EUA foi de $309,3$ milhões de pessoas. Nosso modelo superestimou a população. Sabemos que um modelo exponencial não se adequa muito bem a um crescimento populacional de uma população já grande.
                     \bigbreak
