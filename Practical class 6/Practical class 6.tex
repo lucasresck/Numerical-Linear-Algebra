@@ -103,6 +103,10 @@
             \end{figure}
             
             Já para essa imagem, $p = 0,035$ é suficiente para que a imagem fique comparável à original.
+            
+            \bigbreak
+            
+            Uma compressão de imagens por SVD é eficiente, pois nós podemos salvar as matrizes da decomposição SVD muito reduzidas ao invés da imagem original. Por exemplo, ao invés de guardar uma matriz $3006 \times 5344$ que representa a imagem \textit{marinha.png}, podemos guardar as matrizes da decomposição SVD comprimidas com $p = 0,035$, sendo $U$ de ordem $3006 \times 105$, $\Sigma$ de ordem $105 \times 105$ e $V$, $5344 \times 105$. Reduzimos o armazenamento de mais de $16$ milhões de elementos para menos de um milhão, sem perder muita qualidade!
         
     \end{enumerate}
 \end{document}
